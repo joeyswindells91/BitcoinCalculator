@@ -110,21 +110,120 @@ $(".current").change(function() {
   })
 })
 
-  // //years
-  // var years = parseInt($("#input-years").val());
+
 
 //compound interest calculation
+
+//bitcoin
 
 $(".calculate").click(function() {
   $("#bitcoin-future-value").text(function() {
     //years
     var years = parseInt($("#input-years").val());
+    var interest = (parseInt($("#bitcoin-expected-interest").val())) * .01;
 
     var bitcoin = parseInt($("#bitcoin-current-value").val());
-    var compound = bitcoin * Math.pow((1 + 1), (years));
-    return "Bitcoin: $" + compound.toFixed(2);
+    var compound = bitcoin * Math.pow((1 + interest), (years));
+    return compound.toFixed(2);
   })
 })
+
+//stocks
+
+$(".calculate").click(function() {
+  $("#stocks-future-value").text(function() {
+    //years
+    var years = parseInt($("#input-years").val());
+    var interest = (parseInt($("#stocks-expected-interest").val())) * .01;
+
+    var stocks = parseInt($("#stocks-current-value").val());
+    var compound = stocks * Math.pow((1 + interest), (years));
+    return compound.toFixed(2);
+  })
+})
+
+//shitcoins
+
+$(".calculate").click(function() {
+  $("#shitcoins-future-value").text(function() {
+    //years
+    var years = parseInt($("#input-years").val());
+    var interest = (parseInt($("#shitcoins-expected-interest").val())) * .01;
+
+    var shitcoins = parseInt($("#shitcoins-current-value").val());
+    var compound = shitcoins * Math.pow((1 + interest), (years));
+    return compound.toFixed(2);
+  })
+})
+
+//fixed income
+
+$(".calculate").click(function() {
+  $("#fixedincome-future-value").text(function() {
+    //years
+    var years = parseInt($("#input-years").val());
+    var interest = (parseInt($("#fixedincome-expected-interest").val())) * .01;
+
+    var fixedincome = parseInt($("#fixedincome-current-value").val());
+    var compound = fixedincome * Math.pow((1 + interest), (years));
+    return compound.toFixed(2);
+  })
+})
+
+//fiat
+
+$(".calculate").click(function() {
+  $("#fiat-future-value").text(function() {
+    //years
+    var years = parseInt($("#input-years").val());
+    var interest = (parseInt($("#fiat-expected-interest").val())) * .01;
+
+    var fiat = parseInt($("#fixedincome-current-value").val());
+    var compound = fiat * Math.pow((1 + interest), (years));
+    return compound.toFixed(2);
+  })
+})
+
+//Pokemon
+
+$(".calculate").click(function() {
+  $("#pokemon-future-value").text(function() {
+    //years
+    var years = parseInt($("#input-years").val());
+    var interest = (parseInt($("#pokemon-expected-interest").val())) * .01;
+
+    var pokemon = parseInt($("#pokemon-current-value").val());
+    var compound = pokemon * Math.pow((1 + interest), (years));
+    return compound.toFixed(2);
+  })
+})
+
+//Real Estate
+
+$(".calculate").click(function() {
+  $("#realestate-future-value").text(function() {
+    //years
+    var years = parseInt($("#input-years").val());
+    var interest = (parseInt($("#realestate-expected-interest").val())) * .01;
+
+    var realestate = parseInt($("#realestate-current-value").val());
+    var compound = realestate * Math.pow((1 + interest), (years));
+    return compound.toFixed(2);
+  })
+})
+
+//Total Future Value
+
+$(".calculate").click(function() {
+  $("#total-future-value").text(function() {
+    //years
+
+    var total = parseInt($("#bitcoin-future-value").text()) + parseInt($("#stocks-future-value").text()) + parseInt($("#shitcoins-future-value").text()) + parseInt($("#fixedincome-future-value").text()) + parseInt($("#fiat-future-value").text()) + parseInt($("#pokemon-future-value").text()) + parseInt($("#realestate-future-value").text());
+
+    return "Total Future Value: $" + total.toFixed(2);
+  })
+})
+
 // Annual Compound Interest Formula: A = P(1+r/n)^n
 
 // A = the future value of the investment/loan, including interest P = the principal investment amount (the initial deposit or loan amount) r = the annual interest rate (decimal) n = the number of times that interest is compounded per year t = the number of years the money is invested or borrowed for
