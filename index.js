@@ -44,8 +44,10 @@ $(".current").change(function() {
     var total = parseInt($("#bitcoin-current-value").val()) + parseInt($("#stocks-current-value").val()) + parseInt($("#fixedincome-current-value").val()) + parseInt($("#fiat-current-value").val()) + parseInt($("#realestate-current-value").val());
 
     var percent = parseInt($("#bitcoin-current-value").val()) / total;
+    return (percent * 100).toFixed(2) + "%";
+    // var result = (percent * 100) + "%";
 
-    return (percent * 100) + "%";
+    // return result.toFixed(2);
   })
 })
 
@@ -55,7 +57,8 @@ $(".current").change(function() {
 
     var percent = parseInt($("#stocks-current-value").val()) / total;
 
-    return (percent * 100) + "%";
+    return (percent * 100).toFixed(2) + "%";
+    // return (percent * 100) + "%";
   })
 })
 
@@ -65,7 +68,8 @@ $(".current").change(function() {
 
     var percent = parseInt($("#fixedincome-current-value").val()) / total;
 
-    return (percent * 100) + "%";
+    return (percent * 100).toFixed(2) + "%";
+    // return (percent * 100) + "%";
   })
 })
 
@@ -76,7 +80,8 @@ $(".current").change(function() {
 
     var percent = parseInt($("#fiat-current-value").val()) / total;
 
-    return (percent * 100) + "%";
+    return (percent * 100).toFixed(2) + "%";
+    // return (percent * 100) + "%";
   })
 })
 
@@ -86,6 +91,7 @@ $(".current").change(function() {
 
     var percent = parseInt($("#realestate-current-value").val()) / total;
 
-    return (percent * 100) + "%";
+    return (percent * 100).toFixed(2) + "%";
+    // return (percent * 100) + "%";
   })
 })
