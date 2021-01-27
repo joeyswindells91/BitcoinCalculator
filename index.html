@@ -35,10 +35,10 @@
           <tr>
             <th scope="row">Bitcoin</th>
             <td><h5 id="bitcoin-allocation">0%</h5></td>
-            <td><input id="bitcoin-current-value" type="text" value="0" class="current"></td>
-            <td><input id="bitcoin-contribution" type="text" value="0" class="monthly-contribution">></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
+            <td>$<input id="bitcoin-current-value" type="text" value="0" class="current"></td>
+            <td>$<input id="bitcoin-contribution" type="text" value="0" class="monthly-contribution"></td>
+            <td><input type="number">%</td>
+            <td><input type="number">%</td>
             <!-- <td>Cell</td>
             <td>Cell</td>
             <td>Cell</td>
@@ -46,25 +46,40 @@
             <td>Cell</td> -->
           </tr>
           <tr>
-            <th scope="row">Stocks</th>
+            <th scope="row">Stonks</th>
             <td><h5 id="stocks-allocation">0%</h5></td>
-            <td><input id="stocks-current-value" type="text" value="0" class="current"></td>
-            <td><input id="stocks-contribution" type="text" value="0" class="monthly-contribution">></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
+            <td>$<input id="stocks-current-value" type="text" value="0" class="current"></td>
+            <td>$<input id="stocks-contribution" type="text" value="0" class="monthly-contribution"></td>
+            <td><input type="number">%</td>
+            <td><input type="number">%</td>
             <!-- <td>Cell</td>
             <td>Cell</td>
             <td>Cell</td>
             <td>Cell</td>
             <td>Cell</td> -->
           </tr>
+
+          <tr>
+            <th scope="row">ShitCoins</th>
+            <td><h5 id="shitcoins-allocation">0%</h5></td>
+            <td>$<input id="shitcoins-current-value" type="text" value="0" class="current"></td>
+            <td>$<input id="shitcoins-contribution" type="text" value="0" class="monthly-contribution"></td>
+            <td><input type="number">%</td>
+            <td><input type="number">%</td>
+            <!-- <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td> -->
+          </tr>
+
           <tr>
             <th scope="row">Fixed Income</th>
             <td><h5 id="fixedincome-allocation">0%</h5></td>
-            <td><input id="fixedincome-current-value" type="text" value="0" class="current"></td>
-            <td><input id="fixedincome-contribution" type="text" value="0" class="monthly-contribution">></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
+            <td>$<input id="fixedincome-current-value" type="text" value="0" class="current"></td>
+            <td>$<input id="fixedincome-contribution" type="text" value="0" class="monthly-contribution"></td>
+            <td><input type="number">%</td>
+            <td><input type="number">%</td>
             <!-- <td>Cell</td>
             <td>Cell</td>
             <td>Cell</td>
@@ -74,10 +89,23 @@
           <tr>
             <th scope="row">Fiat Cash</th>
             <td><h5 id="fiat-allocation">0%</h5></td>
-            <td><input id="fiat-current-value" type="text" value="0" class="current"></td>
-            <td><input id="fiat-contribution" type="text" value="0" class="monthly-contribution">></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
+            <td>$<input id="fiat-current-value" type="text" value="0" class="current"></td>
+            <td>$<input id="fiat-contribution" type="text" value="0" class="monthly-contribution"></td>
+            <td><input type="number">%</td>
+            <td><input type="number">%</td>
+            <!-- <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td> -->
+          </tr>
+          <tr>
+            <th scope="row">Pokemon Cards</th>
+            <td><h5 id="pokemon-allocation">0%</h5></td>
+            <td>$<input id="pokemon-current-value" type="text" value="0" class="current"></td>
+            <td>$<input id="pokemon-contribution" type="text" value="0" class="monthly-contribution"></td>
+            <td><input type="number">%</td>
+            <td><input type="number">%</td>
             <!-- <td>Cell</td>
             <td>Cell</td>
             <td>Cell</td>
@@ -87,10 +115,10 @@
           <tr>
             <th scope="row">Real Estate</th>
             <td><h5 id="realestate-allocation">0%</h5></td>
-            <td><input id="realestate-current-value" type="text" value="0" class="current"></td>
-            <td><input id="realestate-contribution" type="text" value="0" class="monthly-contribution"></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
+            <td>$<input id="realestate-current-value" type="text" value="0" class="current"></td>
+            <td>$<input id="realestate-contribution" type="text" value="0" class="monthly-contribution"></td>
+            <td><input type="number">%</td>
+            <td><input type="number">%</td>
             <!-- <td>Cell</td>
             <td>Cell</td>
             <td>Cell</td>
@@ -121,7 +149,7 @@
     <form>
       <div class="form-group">
         <label for="formGroupExampleInput">TimeFrame</label>
-        <input type="number" class="form-control" id="formGroupExampleInput" placeholder="Years">
+        <input type="text" class="form-control" id="input-years" placeholder="Years">
       </div>
       <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -138,6 +166,10 @@
         <input type="number" class="form-control" id="formGroupExampleInput2" placeholder="%">
       </div>
     </form>
+
+    <button type="button" class="calculate btn btn-dark">Calculate</button>
+
+    <h3 id="bitcoin-future-value"></h3>
 
     <div class="text-center">Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 
