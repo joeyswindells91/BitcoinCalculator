@@ -10,19 +10,19 @@
   <link rel="icon" href="images/bitcoinicon.png" type="images/png">
 </head>
 <body>
-  <div class="container bg-warning">
-    <div class="row text-center">
+  <div class="container bg-warning text-light">
+    <div class="row text-center title">
       <h1>Bitcoin Compound Interest Calculator</h1>
     </div>
     <div class="table-responsive">
-      <table class="table">
+      <table class="table text-light">
         <thead>
           <tr>
             <th scope="col">Asset Type</th>
             <th scope="col">Allocation %</th>
-            <th scope="col">Current Value</th>
-            <th scope="col">Monthy Contribution</th>
-            <th scope="col">Annual Expected Interest Rate</th>
+            <th scope="col">Current Value ($)</th>
+            <th scope="col">Monthy Contribution ($)</th>
+            <th scope="col">Annual Expected Interest Rate (%)</th>
             <!-- <th scope="col">Interest Rate Variance</th> -->
           </tr>
         </thead>
@@ -30,59 +30,59 @@
           <tr>
             <th scope="row">Bitcoin <img src="images/bitcoin.png" alt=""></th>
             <td><h5 id="bitcoin-allocation">0%</h5></td>
-            <td>$<input id="bitcoin-current-value" type="text" value="10" class="current"></td>
-            <td>$<input id="bitcoin-contribution" type="text" value="0" class="monthly-contribution"></td>
-            <td><input id="bitcoin-expected-interest" type="text" value="10">%</td>
+            <td><input id="bitcoin-current-value" type="text" value="10" class="current"></td>
+            <td><input id="bitcoin-contribution" type="text" value="0" class="monthly-contribution"></td>
+            <td><input id="bitcoin-expected-interest" type="text" value="10"></td>
             <!-- <td><input type="number">%</td> -->
           </tr>
           <tr>
             <th scope="row">Stonks <img src="images/statistics.png" alt=""></th>
             <td><h5 id="stocks-allocation">0%</h5></td>
-            <td>$<input id="stocks-current-value" type="text" value="10" class="current"></td>
-            <td>$<input id="stocks-contribution" type="text" value="0" class="monthly-contribution"></td>
-            <td><input id="stocks-expected-interest" type="text" value="10">%</td>
+            <td><input id="stocks-current-value" type="text" value="10" class="current"></td>
+            <td><input id="stocks-contribution" type="text" value="0" class="monthly-contribution"></td>
+            <td><input id="stocks-expected-interest" type="text" value="10"></td>
             <!-- <td><input type="number">%</td> -->
           </tr>
 
           <tr>
             <th scope="row">ShitCoins <img src="images/pooping.png" alt=""></th>
             <td><h5 id="shitcoins-allocation">0%</h5></td>
-            <td>$<input id="shitcoins-current-value" type="text" value="10" class="current"></td>
-            <td>$<input id="shitcoins-contribution" type="text" value="0" class="monthly-contribution"></td>
-            <td><input id="shitcoins-expected-interest" type="text" value="10">%</td>
+            <td><input id="shitcoins-current-value" type="text" value="10" class="current"></td>
+            <td><input id="shitcoins-contribution" type="text" value="0" class="monthly-contribution"></td>
+            <td><input id="shitcoins-expected-interest" type="text" value="10"></td>
             <!-- <td><input type="number">%</td> -->
           </tr>
 
           <tr>
             <th scope="row">Fixed Income <img src="images/bond.png" alt=""></th>
             <td><h5 id="fixedincome-allocation">0%</h5></td>
-            <td>$<input id="fixedincome-current-value" type="text" value="10" class="current"></td>
-            <td>$<input id="fixedincome-contribution" type="text" value="0" class="monthly-contribution"></td>
-            <td><input id="fixedincome-expected-interest" type="text" value="10">%</td>
+            <td><input id="fixedincome-current-value" type="text" value="10" class="current"></td>
+            <td><input id="fixedincome-contribution" type="text" value="0" class="monthly-contribution"></td>
+            <td><input id="fixedincome-expected-interest" type="text" value="10"></td>
             <!-- <td><input type="number">%</td> -->
           </tr>
           <tr>
             <th scope="row">Fiat Cash <img src="images/money.png" alt=""></th>
             <td><h5 id="fiat-allocation">0%</h5></td>
-            <td>$<input id="fiat-current-value" type="text" value="10" class="current"></td>
-            <td>$<input id="fiat-contribution" type="text" value="0" class="monthly-contribution"></td>
-            <td><input id="fiat-expected-interest" type="text" value="10">%</td>
+            <td><input id="fiat-current-value" type="text" value="10" class="current"></td>
+            <td><input id="fiat-contribution" type="text" value="0" class="monthly-contribution"></td>
+            <td><input id="fiat-expected-interest" type="text" value="10"></td>
             <!-- <td><input type="number">%</td> -->
           </tr>
           <tr>
             <th scope="row">Pokemon Cards <img src="images/pikachu.png" alt=""></th>
             <td><h5 id="pokemon-allocation">0%</h5></td>
-            <td>$<input id="pokemon-current-value" type="text" value="10" class="current"></td>
-            <td>$<input id="pokemon-contribution" type="text" value="0" class="monthly-contribution"></td>
-            <td><input id="pokemon-expected-interest" type="text" value="10">%</td>
+            <td><input id="pokemon-current-value" type="text" value="10" class="current"></td>
+            <td><input id="pokemon-contribution" type="text" value="0" class="monthly-contribution"></td>
+            <td><input id="pokemon-expected-interest" type="text" value="10"></td>
             <!-- <td><input type="number">%</td> -->
           </tr>
           <tr>
             <th scope="row">Real Estate <img src="images/home.png" alt=""></th>
             <td><h5 id="realestate-allocation">0%</h5></td>
-            <td>$<input id="realestate-current-value" type="text" value="10" class="current"></td>
-            <td>$<input id="realestate-contribution" type="text" value="0" class="monthly-contribution"></td>
-            <td><input id="realestate-expected-interest" type="text" value="10">%</td>
+            <td><input id="realestate-current-value" type="text" value="10" class="current"></td>
+            <td><input id="realestate-contribution" type="text" value="0" class="monthly-contribution"></td>
+            <td><input id="realestate-expected-interest" type="text" value="10"></td>
             <!-- <td><input type="number">%</td> -->
           </tr>
           <tr>
@@ -106,11 +106,11 @@
     </div>
 
       <div class="text-center">
-        <button type="button" class="calculate btn btn-dark">Calculate</button>
+        <button type="button" class="calculate btn btn-light">Calculate</button>
       </div>
 
     <div class="table-responsive future-table">
-      <table class="table">
+      <table class="table text-light">
         <thead>
           <tr>
             <th scope="col">Asset Type</th>
