@@ -215,6 +215,7 @@ $(".calculate").click(function() {
 //Total Future Value
 
 $(".calculate").click(function() {
+  $(".future-table").css("visibility", "visible");
   $("#total-future-value").text(function() {
     //years
 

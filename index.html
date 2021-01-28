@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bitcoin Compounding Interest Calculator</title>
-  <!-- <link rel="stylesheet" href="styles.css"> -->
+  <link rel="stylesheet" href="styles.css">
   <!-- boostrap css link-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   <link rel="icon" href="images/bitcoinicon.png" type="images/png">
@@ -93,40 +93,79 @@
             <th scope="row">Total Monthly Contribution</th>
             <td><h5 id="total-contribution">$0</h5></td>
           </tr>
+          <tr>
+            <th scope="row">TimeFrame (Years)</th>
+            <td><input type="text" class="form-control" id="input-years" placeholder="Years"></td>
+          </tr>
+          <tr>
+            <th scope="row">Annual Inflation</th>
+            <td><input type="number" class="form-control" id="formGroupExampleInput2" placeholder="%"></td>
+          </tr>
         </tbody>
       </table>
     </div>
-    <form>
-      <div class="form-group">
-        <label for="formGroupExampleInput">TimeFrame</label>
-        <input type="text" class="form-control" id="input-years" placeholder="Years">
-      </div>
-      <!-- <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Compound Frequency
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">Daily</a>
-          <a class="dropdown-item" href="#">Weekly</a>
-          <a class="dropdown-item" href="#">Monthly</a>
-        </div>
-      </div> -->
-      <div class="form-group">
-        <label for="formGroupExampleInput2">Annual Inflation</label>
-        <input type="number" class="form-control" id="formGroupExampleInput2" placeholder="%">
-      </div>
-    </form>
 
-    <button type="button" class="calculate btn btn-dark">Calculate</button>
+      <div class="text-center">
+        <button type="button" class="calculate btn btn-dark">Calculate</button>
+      </div>
 
-    <h3 id="bitcoin-future-value"></h3>
-    <h3 id="stocks-future-value"></h3>
-    <h3 id="shitcoins-future-value"></h3>
-    <h3 id="fixedincome-future-value"></h3>
-    <h3 id="fiat-future-value"></h3>
-    <h3 id="pokemon-future-value"></h3>
-    <h3 id="realestate-future-value"></h3>
-    <h3 id="total-future-value"></h3>
+    <div class="table-responsive future-table">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Asset Type</th>
+            <th scope="col">Future Allocation %</th>
+            <th scope="col">Future Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Bitcoin <img src="images/bitcoin.png" alt=""></th>
+            <td><h5 id="bitcoin-future-allocation">0%</h5></td>
+            <td>$<h5 id="bitcoin-future-value"></h5></td>
+          </tr>
+          <tr>
+            <th scope="row">Stonks <img src="images/statistics.png" alt=""></th>
+            <td><h5 id="stocks-future-allocation">0%</h5></td>
+            <td>$<h5 id="stocks-future-value"></h5></td>
+          </tr>
+
+          <tr>
+            <th scope="row">ShitCoins <img src="images/pooping.png" alt=""></th>
+            <td><h5 id="shitcoins-future-allocation">0%</h5></td>
+            <td>$ <h5 id="shitcoins-future-value"></h5></td>
+          </tr>
+
+          <tr>
+            <th scope="row">Fixed Income <img src="images/bond.png" alt=""></th>
+            <td><h5 id="fixedincome-future-allocation">0%</h5></td>
+            <td>$<h5 id="fixedincome-future-value"></h5></td>
+          </tr>
+          <tr>
+            <th scope="row">Fiat Cash <img src="images/money.png" alt=""></th>
+            <td><h5 id="fiat-future-allocation">0%</h5></td>
+            <td>$<h5 id="fiat-future-value"></h5></td>
+          </tr>
+          <tr>
+            <th scope="row">Pokemon Cards <img src="images/pikachu.png" alt=""></th>
+            <td><h5 id="pokemon-future-allocation">0%</h5></td>
+            <td>$<h5 id="pokemon-future-value"></h5></td>
+          </tr>
+          <tr>
+            <th scope="row">Real Estate <img src="images/home.png" alt=""></th>
+            <td><h5 id="realestate-future-allocation">0%</h5></td>
+            <td>$<h5 id="realestate-future-value"></h5></td>
+          </tr>
+          <tr>
+            <th scope="row">Total Future Value</th>
+            <td></td>
+            <td><h5 id="total-current-value">$0</h5></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
 
 
     <div class="text-center">Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
