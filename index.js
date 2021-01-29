@@ -113,17 +113,23 @@ $(".current").change(function() {
 
 
 //compound interest calculation
+// $(".calculate").click(function() {
+//   if (!parseInt($("#input-years").val()) > 0) {
+//     $("#future-table").removeClass("future-table")
+//     alert("Input year!")
+//   };
+// })
 
-//bitcoin
 
 $(".calculate").click(function() {
   $("#bitcoin-future-value").text(function() {
     //years
     var years = parseInt($("#input-years").val());
     var interest = (parseInt($("#bitcoin-expected-interest").val())) * .01;
+    var monthly = (parseInt($("#bitcoin-contribution").val()));
 
     var bitcoin = parseInt($("#bitcoin-current-value").val());
-    var compound = bitcoin * Math.pow((1 + interest), (years));
+    var compound = (bitcoin * Math.pow((1 + interest), (years))) + (monthly * (Math.pow((1 + interest), years) - 1) / (interest));
     return compound.toFixed(2);
   })
 })
@@ -214,15 +220,32 @@ $(".calculate").click(function() {
 
 //Total Future Value
 
+
 $(".calculate").click(function() {
-  $(".future-table").css("visibility", "visible");
-  $("#total-future-value").text(function() {
-    //years
 
-    var total = parseInt($("#bitcoin-future-value").text()) + parseInt($("#stocks-future-value").text()) + parseInt($("#shitcoins-future-value").text()) + parseInt($("#fixedincome-future-value").text()) + parseInt($("#fiat-future-value").text()) + parseInt($("#pokemon-future-value").text()) + parseInt($("#realestate-future-value").text());
+  if (!parseFloat($("#input-years").val()) > 0) {
+    $("#future-table").css("visibility", "hidden");
+    alert("Input year!");
+  }
+  else {
+    $(".future-table").css("visibility", "visible");
+    $("#total-future-value").text(function() {
+      //years
 
-    return "Total Future Value: $" + total.toFixed(2);
-  })
+      var total = (parseFloat($("#bitcoin-future-value").text()) + parseFloat($("#stocks-future-value").text()) + parseFloat($("#shitcoins-future-value").text()) + parseFloat($("#fixedincome-future-value").text()) + parseFloat($("#fiat-future-value").text()) + parseFloat($("#pokemon-future-value").text()) + parseFloat($("#realestate-future-value").text()));
+
+      return total.toFixed(2);
+    })
+  }
+
+  // $(".future-table").css("visibility", "visible");
+  // $("#total-future-value").text(function() {
+  //   //years
+
+  //   var total = (parseFloat($("#bitcoin-future-value").text()) + parseFloat($("#stocks-future-value").text()) + parseFloat($("#shitcoins-future-value").text()) + parseFloat($("#fixedincome-future-value").text()) + parseFloat($("#fiat-future-value").text()) + parseFloat($("#pokemon-future-value").text()) + parseFloat($("#realestate-future-value").text()));
+
+  //   return total;
+  // })
 })
 
 // Annual Compound Interest Formula: A = P(1+r/n)^n
