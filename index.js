@@ -129,10 +129,11 @@ $(".calculate").click(function() {
     var monthly = (parseInt($("#bitcoin-contribution").val()));
 
     var bitcoin = parseInt($("#bitcoin-current-value").val());
-    var compound = (bitcoin * Math.pow((1 + interest), (years))) + (monthly * (Math.pow((1 + interest), years) - 1) / (interest));
+    var compound = (bitcoin * Math.pow((1 + interest), (years))) + (monthly * ((Math.pow((1 + (interest/12)), (years * 12)) - 1).toFixed(2) / (interest/12)));
+
     return compound.toFixed(2);
   })
-})
+});
 
 //stocks
 
