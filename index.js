@@ -142,9 +142,11 @@ $(".calculate").click(function() {
     //years
     var years = parseInt($("#input-years").val());
     var interest = (parseInt($("#stocks-expected-interest").val())) * .01;
+    var monthly = (parseInt($("#stocks-contribution").val()));
 
     var stocks = parseInt($("#stocks-current-value").val());
-    var compound = stocks * Math.pow((1 + interest), (years));
+    var compound = (stocks * Math.pow((1 + interest), (years))) + (monthly * ((Math.pow((1 + (interest/12)), (years * 12)) - 1).toFixed(2) / (interest/12)));
+
     return compound.toFixed(2);
   })
 })
@@ -156,9 +158,11 @@ $(".calculate").click(function() {
     //years
     var years = parseInt($("#input-years").val());
     var interest = (parseInt($("#shitcoins-expected-interest").val())) * .01;
+    var monthly = (parseInt($("#shitcoins-contribution").val()));
 
     var shitcoins = parseInt($("#shitcoins-current-value").val());
-    var compound = shitcoins * Math.pow((1 + interest), (years));
+    var compound = (shitcoins * Math.pow((1 + interest), (years))) + (monthly * ((Math.pow((1 + (interest/12)), (years * 12)) - 1).toFixed(2) / (interest/12)));
+
     return compound.toFixed(2);
   })
 })
@@ -170,9 +174,10 @@ $(".calculate").click(function() {
     //years
     var years = parseInt($("#input-years").val());
     var interest = (parseInt($("#fixedincome-expected-interest").val())) * .01;
+    var monthly = (parseInt($("#fixedincome-contribution").val()));
 
     var fixedincome = parseInt($("#fixedincome-current-value").val());
-    var compound = fixedincome * Math.pow((1 + interest), (years));
+    var compound = (fixedincome * Math.pow((1 + interest), (years))) + (monthly * ((Math.pow((1 + (interest/12)), (years * 12)) - 1).toFixed(2) / (interest/12)));
     return compound.toFixed(2);
   })
 })
@@ -184,9 +189,10 @@ $(".calculate").click(function() {
     //years
     var years = parseInt($("#input-years").val());
     var interest = (parseInt($("#fiat-expected-interest").val())) * .01;
+    var monthly = (parseInt($("#fiat-contribution").val()));
 
-    var fiat = parseInt($("#fixedincome-current-value").val());
-    var compound = fiat * Math.pow((1 + interest), (years));
+    var fiat = parseInt($("#fiat-current-value").val());
+    var compound = (fiat * Math.pow((1 + interest), (years))) + (monthly * ((Math.pow((1 + (interest/12)), (years * 12)) - 1).toFixed(2) / (interest/12)));
     return compound.toFixed(2);
   })
 })
@@ -198,9 +204,10 @@ $(".calculate").click(function() {
     //years
     var years = parseInt($("#input-years").val());
     var interest = (parseInt($("#pokemon-expected-interest").val())) * .01;
+    var monthly = (parseInt($("#pokemon-contribution").val()));
 
     var pokemon = parseInt($("#pokemon-current-value").val());
-    var compound = pokemon * Math.pow((1 + interest), (years));
+    var compound = (pokemon * Math.pow((1 + interest), (years))) + (monthly * ((Math.pow((1 + (interest/12)), (years * 12)) - 1).toFixed(2) / (interest/12)));
     return compound.toFixed(2);
   })
 })
@@ -212,9 +219,11 @@ $(".calculate").click(function() {
     //years
     var years = parseInt($("#input-years").val());
     var interest = (parseInt($("#realestate-expected-interest").val())) * .01;
+    var monthly = (parseInt($("#realestate-contribution").val()));
 
     var realestate = parseInt($("#realestate-current-value").val());
-    var compound = realestate * Math.pow((1 + interest), (years));
+    var compound = (realestate * Math.pow((1 + interest), (years))) + (monthly * ((Math.pow((1 + (interest/12)), (years * 12)) - 1).toFixed(2) / (interest/12)));
+    return compound.toFixed(2);
     return compound.toFixed(2);
   })
 })
