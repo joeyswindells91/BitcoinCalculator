@@ -112,14 +112,7 @@ $(".current").change(function() {
 
 
 
-//compound interest calculation
-// $(".calculate").click(function() {
-//   if (!parseInt($("#input-years").val()) > 0) {
-//     $("#future-table").removeClass("future-table")
-//     alert("Input year!")
-//   };
-// })
-
+//****************************   test for calculate button  **************************/
 
 $(".calculate").click(function() {
   $("#bitcoin-future-value").text(function() {
@@ -133,11 +126,7 @@ $(".calculate").click(function() {
 
     return compound.toFixed(2);
   })
-});
 
-//stocks
-
-$(".calculate").click(function() {
   $("#stocks-future-value").text(function() {
     //years
     var years = parseInt($("#input-years").val());
@@ -149,11 +138,7 @@ $(".calculate").click(function() {
 
     return compound.toFixed(2);
   })
-})
 
-//shitcoins
-
-$(".calculate").click(function() {
   $("#shitcoins-future-value").text(function() {
     //years
     var years = parseInt($("#input-years").val());
@@ -165,11 +150,7 @@ $(".calculate").click(function() {
 
     return compound.toFixed(2);
   })
-})
 
-//fixed income
-
-$(".calculate").click(function() {
   $("#fixedincome-future-value").text(function() {
     //years
     var years = parseInt($("#input-years").val());
@@ -180,11 +161,7 @@ $(".calculate").click(function() {
     var compound = (fixedincome * Math.pow((1 + interest), (years))) + (monthly * ((Math.pow((1 + (interest/12)), (years * 12)) - 1).toFixed(2) / (interest/12)));
     return compound.toFixed(2);
   })
-})
 
-//fiat
-
-$(".calculate").click(function() {
   $("#fiat-future-value").text(function() {
     //years
     var years = parseInt($("#input-years").val());
@@ -195,11 +172,7 @@ $(".calculate").click(function() {
     var compound = (fiat * Math.pow((1 + interest), (years))) + (monthly * ((Math.pow((1 + (interest/12)), (years * 12)) - 1).toFixed(2) / (interest/12)));
     return compound.toFixed(2);
   })
-})
 
-//Pokemon
-
-$(".calculate").click(function() {
   $("#pokemon-future-value").text(function() {
     //years
     var years = parseInt($("#input-years").val());
@@ -210,11 +183,7 @@ $(".calculate").click(function() {
     var compound = (pokemon * Math.pow((1 + interest), (years))) + (monthly * ((Math.pow((1 + (interest/12)), (years * 12)) - 1).toFixed(2) / (interest/12)));
     return compound.toFixed(2);
   })
-})
 
-//Real Estate
-
-$(".calculate").click(function() {
   $("#realestate-future-value").text(function() {
     //years
     var years = parseInt($("#input-years").val());
@@ -226,12 +195,6 @@ $(".calculate").click(function() {
     return compound.toFixed(2);
     return compound.toFixed(2);
   })
-})
-
-//Total Future Value
-
-
-$(".calculate").click(function() {
 
   if (!parseFloat($("#input-years").val()) > 0) {
     $("#future-table").css("visibility", "hidden");
@@ -248,19 +211,228 @@ $(".calculate").click(function() {
     })
   }
 
-  // $(".future-table").css("visibility", "visible");
-  // $("#total-future-value").text(function() {
-  //   //years
+    $("#bitcoin-future-allocation").text(function() {
+      var total = parseInt($("#bitcoin-future-value").text()) + parseInt($("#stocks-future-value").text()) + parseInt($("#fixedincome-future-value").text()) + parseInt($("#shitcoins-future-value").text()) + parseInt($("#fiat-future-value").text()) + parseInt($("#pokemon-future-value").text()) + parseInt($("#realestate-future-value").text());
 
-  //   var total = (parseFloat($("#bitcoin-future-value").text()) + parseFloat($("#stocks-future-value").text()) + parseFloat($("#shitcoins-future-value").text()) + parseFloat($("#fixedincome-future-value").text()) + parseFloat($("#fiat-future-value").text()) + parseFloat($("#pokemon-future-value").text()) + parseFloat($("#realestate-future-value").text()));
+      var percent = parseInt($("#bitcoin-future-value").text()) / total;
+      return (percent * 100).toFixed(2) + "%";
+      // var result = (percent * 100) + "%";
 
-  //   return total;
-  // })
-})
+      // return result.toFixed(2);
+    })
 
-// Annual Compound Interest Formula: A = P(1+r/n)^n
+    $("#stocks-future-allocation").text(function() {
+      var total = parseInt($("#bitcoin-future-value").text()) + parseInt($("#stocks-future-value").text()) + parseInt($("#fixedincome-future-value").text()) + parseInt($("#shitcoins-future-value").text()) + parseInt($("#fiat-future-value").text()) + parseInt($("#pokemon-future-value").text()) + parseInt($("#realestate-future-value").text());
 
-// A = the future value of the investment/loan, including interest P = the principal investment amount (the initial deposit or loan amount) r = the annual interest rate (decimal) n = the number of times that interest is compounded per year t = the number of years the money is invested or borrowed for
+      var percent = parseInt($("#stocks-future-value").text()) / total;
+      return (percent * 100).toFixed(2) + "%";
+      // var result = (percent * 100) + "%";
 
-//bitcoin compound interest
+      // return result.toFixed(2);
+    })
+
+    $("#shitcoins-future-allocation").text(function() {
+      var total = parseInt($("#bitcoin-future-value").text()) + parseInt($("#stocks-future-value").text()) + parseInt($("#fixedincome-future-value").text()) + parseInt($("#shitcoins-future-value").text()) + parseInt($("#fiat-future-value").text()) + parseInt($("#pokemon-future-value").text()) + parseInt($("#realestate-future-value").text());
+
+      var percent = parseInt($("#shitcoins-future-value").text()) / total;
+      return (percent * 100).toFixed(2) + "%";
+      // var result = (percent * 100) + "%";
+
+      // return result.toFixed(2);
+    })
+
+    $("#fixedincome-future-allocation").text(function() {
+      var total = parseInt($("#bitcoin-future-value").text()) + parseInt($("#stocks-future-value").text()) + parseInt($("#fixedincome-future-value").text()) + parseInt($("#shitcoins-future-value").text()) + parseInt($("#fiat-future-value").text()) + parseInt($("#pokemon-future-value").text()) + parseInt($("#realestate-future-value").text());
+
+      var percent = parseInt($("#fixedincome-future-value").text()) / total;
+      return (percent * 100).toFixed(2) + "%";
+      // var result = (percent * 100) + "%";
+
+      // return result.toFixed(2);
+    })
+
+    $("#fiat-future-allocation").text(function() {
+      var total = parseInt($("#bitcoin-future-value").text()) + parseInt($("#stocks-future-value").text()) + parseInt($("#fixedincome-future-value").text()) + parseInt($("#shitcoins-future-value").text()) + parseInt($("#fiat-future-value").text()) + parseInt($("#pokemon-future-value").text()) + parseInt($("#realestate-future-value").text());
+
+      var percent = parseInt($("#fiat-future-value").text()) / total;
+      return (percent * 100).toFixed(2) + "%";
+      // var result = (percent * 100) + "%";
+
+      // return result.toFixed(2);
+    })
+
+    $("#pokemon-future-allocation").text(function() {
+      var total = parseInt($("#bitcoin-future-value").text()) + parseInt($("#stocks-future-value").text()) + parseInt($("#fixedincome-future-value").text()) + parseInt($("#shitcoins-future-value").text()) + parseInt($("#fiat-future-value").text()) + parseInt($("#pokemon-future-value").text()) + parseInt($("#realestate-future-value").text());
+
+      var percent = parseInt($("#pokemon-future-value").text()) / total;
+      return (percent * 100).toFixed(2) + "%";
+      // var result = (percent * 100) + "%";
+
+      // return result.toFixed(2);
+    })
+
+    $("#realestate-future-allocation").text(function() {
+      var total = parseInt($("#bitcoin-future-value").text()) + parseInt($("#stocks-future-value").text()) + parseInt($("#fixedincome-future-value").text()) + parseInt($("#shitcoins-future-value").text()) + parseInt($("#fiat-future-value").text()) + parseInt($("#pokemon-future-value").text()) + parseInt($("#realestate-future-value").text());
+
+      var percent = parseInt($("#realestate-future-value").text()) / total;
+      return (percent * 100).toFixed(2) + "%";
+      // var result = (percent * 100) + "%";
+
+      // return result.toFixed(2);
+    })
+});
+
+
+
+
+
+// **************************  End test for calculate button *************************/
+
+
+// **************************** current code *****************************************/
+// $(".calculate").click(function() {
+//   $("#bitcoin-future-value").text(function() {
+//     //years
+//     var years = parseInt($("#input-years").val());
+//     var interest = (parseInt($("#bitcoin-expected-interest").val())) * .01;
+//     var monthly = (parseInt($("#bitcoin-contribution").val()));
+
+//     var bitcoin = parseInt($("#bitcoin-current-value").val());
+//     var compound = (bitcoin * Math.pow((1 + interest), (years))) + (monthly * ((Math.pow((1 + (interest/12)), (years * 12)) - 1).toFixed(2) / (interest/12)));
+
+//     return compound.toFixed(2);
+//   })
+
+// });
+
+// //stocks
+
+// $(".calculate").click(function() {
+//   $("#stocks-future-value").text(function() {
+//     //years
+//     var years = parseInt($("#input-years").val());
+//     var interest = (parseInt($("#stocks-expected-interest").val())) * .01;
+//     var monthly = (parseInt($("#stocks-contribution").val()));
+
+//     var stocks = parseInt($("#stocks-current-value").val());
+//     var compound = (stocks * Math.pow((1 + interest), (years))) + (monthly * ((Math.pow((1 + (interest/12)), (years * 12)) - 1).toFixed(2) / (interest/12)));
+
+//     return compound.toFixed(2);
+//   })
+// })
+
+// //shitcoins
+
+// $(".calculate").click(function() {
+//   $("#shitcoins-future-value").text(function() {
+//     //years
+//     var years = parseInt($("#input-years").val());
+//     var interest = (parseInt($("#shitcoins-expected-interest").val())) * .01;
+//     var monthly = (parseInt($("#shitcoins-contribution").val()));
+
+//     var shitcoins = parseInt($("#shitcoins-current-value").val());
+//     var compound = (shitcoins * Math.pow((1 + interest), (years))) + (monthly * ((Math.pow((1 + (interest/12)), (years * 12)) - 1).toFixed(2) / (interest/12)));
+
+//     return compound.toFixed(2);
+//   })
+// })
+
+// //fixed income
+
+// $(".calculate").click(function() {
+//   $("#fixedincome-future-value").text(function() {
+//     //years
+//     var years = parseInt($("#input-years").val());
+//     var interest = (parseInt($("#fixedincome-expected-interest").val())) * .01;
+//     var monthly = (parseInt($("#fixedincome-contribution").val()));
+
+//     var fixedincome = parseInt($("#fixedincome-current-value").val());
+//     var compound = (fixedincome * Math.pow((1 + interest), (years))) + (monthly * ((Math.pow((1 + (interest/12)), (years * 12)) - 1).toFixed(2) / (interest/12)));
+//     return compound.toFixed(2);
+//   })
+// })
+
+// //fiat
+
+// $(".calculate").click(function() {
+//   $("#fiat-future-value").text(function() {
+//     //years
+//     var years = parseInt($("#input-years").val());
+//     var interest = (parseInt($("#fiat-expected-interest").val())) * .01;
+//     var monthly = (parseInt($("#fiat-contribution").val()));
+
+//     var fiat = parseInt($("#fiat-current-value").val());
+//     var compound = (fiat * Math.pow((1 + interest), (years))) + (monthly * ((Math.pow((1 + (interest/12)), (years * 12)) - 1).toFixed(2) / (interest/12)));
+//     return compound.toFixed(2);
+//   })
+// })
+
+// //Pokemon
+
+// $(".calculate").click(function() {
+//   $("#pokemon-future-value").text(function() {
+//     //years
+//     var years = parseInt($("#input-years").val());
+//     var interest = (parseInt($("#pokemon-expected-interest").val())) * .01;
+//     var monthly = (parseInt($("#pokemon-contribution").val()));
+
+//     var pokemon = parseInt($("#pokemon-current-value").val());
+//     var compound = (pokemon * Math.pow((1 + interest), (years))) + (monthly * ((Math.pow((1 + (interest/12)), (years * 12)) - 1).toFixed(2) / (interest/12)));
+//     return compound.toFixed(2);
+//   })
+// })
+
+// //Real Estate
+
+// $(".calculate").click(function() {
+//   $("#realestate-future-value").text(function() {
+//     //years
+//     var years = parseInt($("#input-years").val());
+//     var interest = (parseInt($("#realestate-expected-interest").val())) * .01;
+//     var monthly = (parseInt($("#realestate-contribution").val()));
+
+//     var realestate = parseInt($("#realestate-current-value").val());
+//     var compound = (realestate * Math.pow((1 + interest), (years))) + (monthly * ((Math.pow((1 + (interest/12)), (years * 12)) - 1).toFixed(2) / (interest/12)));
+//     return compound.toFixed(2);
+//     return compound.toFixed(2);
+//   })
+// })
+
+// //Total Future Value
+
+
+// $(".calculate").click(function() {
+
+//   if (!parseFloat($("#input-years").val()) > 0) {
+//     $("#future-table").css("visibility", "hidden");
+//     alert("Input year!");
+//   }
+//   else {
+//     $(".future-table").css("visibility", "visible");
+//     $("#total-future-value").text(function() {
+//       //years
+
+//       var total = (parseFloat($("#bitcoin-future-value").text()) + parseFloat($("#stocks-future-value").text()) + parseFloat($("#shitcoins-future-value").text()) + parseFloat($("#fixedincome-future-value").text()) + parseFloat($("#fiat-future-value").text()) + parseFloat($("#pokemon-future-value").text()) + parseFloat($("#realestate-future-value").text()));
+
+//       return total.toFixed(2);
+//     })
+//   }
+
+
+//   // future allocation
+
+//   $(".calculate").click(function() {
+//     $("#bitcoin-future-allocation").text(function() {
+//       var total = parseInt($("#bitcoin-future-value").text()) + parseInt($("#stocks-future-value").text()) + parseInt($("#fixedincome-future-value").text()) + parseInt($("#shitcoins-future-value").text()) + parseInt($("#fiat-future-value").text()) + parseInt($("#pokemon-future-value").text()) + parseInt($("#realestate-future-value").text());
+
+//       var percent = parseInt($("#bitcoin-future-value").text()) / total;
+//       return (percent * 100).toFixed(2) + "%";
+//       // var result = (percent * 100) + "%";
+
+//       // return result.toFixed(2);
+//     })
+//   })
+
+
+ // ********************** END CURRENT CODE *********************************//
 
