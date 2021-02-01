@@ -15,3 +15,7 @@ body {
   visibility: hidden;
 }
 
+#results {
+  margin-bottom: 5%;
+}
+

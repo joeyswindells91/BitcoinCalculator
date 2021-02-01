@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bitcoin Return</title>
+</head>
+<body>
+
+
+  <h3>Bitcoin Current Price
+    <input type="number" name="current-price" id="current-price" min="0" max="1000000">
+  </h3>
+
+  <p>Bitcoin's price in the year <input type="number" id="future-year" name="year" min="2022"> will be <input type="number" id="future-price"></p>
+
+
+  <h5>Calculate Bitcoin avg annual interest rate</h5>
+  <button id="calcinterestrate">Calculate</button>
+
+  <p>Average annual interest rate is <h3 id="interest-rate"></h3></p>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="return.js" charset="utf-8"></script>
+</body>
+</html>
