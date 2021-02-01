@@ -199,8 +199,10 @@ $(".calculate").click(function() {
     })
   }
 
+  var total = parseInt($("#bitcoin-future-value").text()) + parseInt($("#stocks-future-value").text()) + parseInt($("#fixedincome-future-value").text()) + parseInt($("#shitcoins-future-value").text()) + parseInt($("#fiat-future-value").text()) + parseInt($("#pokemon-future-value").text()) + parseInt($("#realestate-future-value").text());
+
     $("#bitcoin-future-allocation").text(function() {
-      var total = parseInt($("#bitcoin-future-value").text()) + parseInt($("#stocks-future-value").text()) + parseInt($("#fixedincome-future-value").text()) + parseInt($("#shitcoins-future-value").text()) + parseInt($("#fiat-future-value").text()) + parseInt($("#pokemon-future-value").text()) + parseInt($("#realestate-future-value").text());
+
 
       var percent = parseInt($("#bitcoin-future-value").text()) / total;
       return (percent * 100).toFixed(2) + "%";
@@ -208,7 +210,7 @@ $(".calculate").click(function() {
     })
 
     $("#stocks-future-allocation").text(function() {
-      var total = parseInt($("#bitcoin-future-value").text()) + parseInt($("#stocks-future-value").text()) + parseInt($("#fixedincome-future-value").text()) + parseInt($("#shitcoins-future-value").text()) + parseInt($("#fiat-future-value").text()) + parseInt($("#pokemon-future-value").text()) + parseInt($("#realestate-future-value").text());
+
 
       var percent = parseInt($("#stocks-future-value").text()) / total;
       return (percent * 100).toFixed(2) + "%";
@@ -216,7 +218,6 @@ $(".calculate").click(function() {
     })
 
     $("#shitcoins-future-allocation").text(function() {
-      var total = parseInt($("#bitcoin-future-value").text()) + parseInt($("#stocks-future-value").text()) + parseInt($("#fixedincome-future-value").text()) + parseInt($("#shitcoins-future-value").text()) + parseInt($("#fiat-future-value").text()) + parseInt($("#pokemon-future-value").text()) + parseInt($("#realestate-future-value").text());
 
       var percent = parseInt($("#shitcoins-future-value").text()) / total;
       return (percent * 100).toFixed(2) + "%";
@@ -224,7 +225,7 @@ $(".calculate").click(function() {
     })
 
     $("#fixedincome-future-allocation").text(function() {
-      var total = parseInt($("#bitcoin-future-value").text()) + parseInt($("#stocks-future-value").text()) + parseInt($("#fixedincome-future-value").text()) + parseInt($("#shitcoins-future-value").text()) + parseInt($("#fiat-future-value").text()) + parseInt($("#pokemon-future-value").text()) + parseInt($("#realestate-future-value").text());
+
 
       var percent = parseInt($("#fixedincome-future-value").text()) / total;
       return (percent * 100).toFixed(2) + "%";
@@ -232,7 +233,7 @@ $(".calculate").click(function() {
     })
 
     $("#fiat-future-allocation").text(function() {
-      var total = parseInt($("#bitcoin-future-value").text()) + parseInt($("#stocks-future-value").text()) + parseInt($("#fixedincome-future-value").text()) + parseInt($("#shitcoins-future-value").text()) + parseInt($("#fiat-future-value").text()) + parseInt($("#pokemon-future-value").text()) + parseInt($("#realestate-future-value").text());
+
 
       var percent = parseInt($("#fiat-future-value").text()) / total;
       return (percent * 100).toFixed(2) + "%";
@@ -240,7 +241,7 @@ $(".calculate").click(function() {
     })
 
     $("#pokemon-future-allocation").text(function() {
-      var total = parseInt($("#bitcoin-future-value").text()) + parseInt($("#stocks-future-value").text()) + parseInt($("#fixedincome-future-value").text()) + parseInt($("#shitcoins-future-value").text()) + parseInt($("#fiat-future-value").text()) + parseInt($("#pokemon-future-value").text()) + parseInt($("#realestate-future-value").text());
+
 
       var percent = parseInt($("#pokemon-future-value").text()) / total;
       return (percent * 100).toFixed(2) + "%";
@@ -248,7 +249,7 @@ $(".calculate").click(function() {
     })
 
     $("#realestate-future-allocation").text(function() {
-      var total = parseInt($("#bitcoin-future-value").text()) + parseInt($("#stocks-future-value").text()) + parseInt($("#fixedincome-future-value").text()) + parseInt($("#shitcoins-future-value").text()) + parseInt($("#fiat-future-value").text()) + parseInt($("#pokemon-future-value").text()) + parseInt($("#realestate-future-value").text());
+
 
       var percent = parseInt($("#realestate-future-value").text()) / total;
       return (percent * 100).toFixed(2) + "%";
