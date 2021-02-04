@@ -1,8 +1,11 @@
 //create var to hold array of input elements
 var currentValues = $(".current");
 var currentContributions = $(".monthly-contribution");
+var currentAllocations = $(".allocation");
+var total = 0;
 
 
+// sum function
 function add(array) {
   //create sum variable
   var sum = 0;
@@ -17,8 +20,30 @@ _.each(array, function(element, index) {
   sum += tempsum;
 })
 
-    return "$" + sum;
+    total= sum;
+
+    return "$" + sum.toFixed(2);
+
 }
+
+function calculateAllocation(allocation, values) {
+
+  // iterate through allocation fields
+  for (var i = 0; i < allocation.length; i++) {
+    var percentage =  ((parseFloat(values[i].value)/total) * 100).toFixed(2);
+
+    if (isNaN(percentage)) {
+      percentage = 0;
+    }
+
+    allocation[i].innerHTML = percentage + "%";
+  }
+
+
+}
+
+//allocation function
+
 
 
 // when an input with the class "current" changes
@@ -26,6 +51,12 @@ $(".current").change(function() {
 
   // set the total current value field to equal a function that sums the values of all elements under class name "current"
   $("#total-current-value").text(add(currentValues));
+
+  //determine the index of this on in currentValues array
+  calculateAllocation(currentAllocations, currentValues);
+  //assign class of allocation at predetermined index and assign value to it
+
+
 })
 
 $(".monthly-contribution").change(function() {
@@ -33,6 +64,10 @@ $(".monthly-contribution").change(function() {
   $("#total-contribution").text(add(currentContributions));
 
 })
+
+// current allocation percentage
+
+// when input changes, use this to
 
 
 
