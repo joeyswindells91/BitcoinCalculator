@@ -9,6 +9,7 @@ var futureAllocations = $(".future-allocation");
 var interest = $(".interest");
 var total = 0;
 var futuretotal = 0;
+var futurevaluesarray = [];
 
 
 
@@ -138,6 +139,9 @@ $(".calculate").click(function() {
     var futurenumber = parseFloat(compoundCalculation(principal, monthlycont, interestrate, years));
     futureValues[i].innerHTML = "$" +  futurenumber;
 
+
+    // push future values to array and update total future value //
+    futurevaluesarray.push(futurenumber);
     futuretotal += futurenumber;
   }
 
@@ -160,12 +164,18 @@ $(".calculate").click(function() {
     return "In " + $("#input-years").val() + " years, you will have $" + futuretotal.toFixed(2) + "!";
   });
 
+  //***************** */ future allocations ************************** //
+
   // for (var i = 0; i < futureAllocations.length; i++) {
+    for (var i = 0; i < futureAllocations.length; i++) {
 
-  //   var current = parseFloat(futureValues[i].text);
+      var current = futurevaluesarray[i];
+      var total = parseFloat(futuretotal);
 
-  //   futureAllocations[i].innerHTML = calculateAllocation(total, current);
-  // }
+      futureAllocations[i].innerHTML = calculateAllocation(total, current);
+    }
+
+  // reset future total
 
   futuretotal = 0;
 
