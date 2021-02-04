@@ -1,15 +1,30 @@
-//create var to hold array of input elements
+
+//*************** */ variable declarations*******************
+
 var currentValues = $(".current");
 var currentContributions = $(".monthly-contribution");
 var currentAllocations = $(".allocation");
+var futureValues = $(".future-value");
+var futureAllocations = $(".future-allocation");
+var interest = $(".interest");
 var total = 0;
+var futuretotal = 0;
 
 
-// sum function
+
+
+//********************* sum function *********************//
 function add(array) {
-  //create sum variable
+
+  // check is array contains input values or heading values
+    //if
+
+
   var sum = 0;
+
+
   // iterate over input array
+
 _.each(array, function(element, index) {
   var tempsum = parseFloat(array[index].value);
 
@@ -26,38 +41,78 @@ _.each(array, function(element, index) {
 
 }
 
-function calculateAllocation(allocation, values) {
+// ******************* allocation calculation ********************* //
 
-  // iterate through allocation fields
-  for (var i = 0; i < allocation.length; i++) {
-    var percentage =  ((parseFloat(values[i].value)/total) * 100).toFixed(2);
+function calculateAllocation(total, current) {
 
-    if (isNaN(percentage)) {
-      percentage = 0;
-    }
+  //using _.each
+  var percent = ((current / total) * 100).toFixed(2);
 
-    allocation[i].innerHTML = percentage + "%";
+  if (isNaN(percent)) {
+    percent = 0;
   }
 
+  return percent + " %";
+
+
+  //****     using forloop *********/
+  // iterate through allocation fields
+  // for (var i = 0; i < allocation.length; i++) {
+
+  //   var percentage =  ((parseFloat(values[i].value)/total) * 100).toFixed(2);
+
+  //   if (isNaN(percentage)) {
+  //     percentage = 0;
+  //   }
+
+  //   allocation[i].innerHTML = percentage + "%";
+  // }
 
 }
 
-//allocation function
+// ******************** compound interest calculation *********************** //
+
+function compoundCalculation(principal, monthlycont, interestrate, years) {
+
+  var result = (principal * Math.pow((1 + interestrate), (years))) + (monthlycont * ((Math.pow((1 + (interestrate/12)), (years * 12)) - 1).toFixed(2) / (interestrate/12)));
+
+  if (isNaN(result)) {
+    result = 0;
+  }
+
+  return result.toFixed(2);
+
+};
+
+
+// **************************** when an input with the class "current" changes ****************//
 
 
 
-// when an input with the class "current" changes
 $(".current").change(function() {
 
-  // set the total current value field to equal a function that sums the values of all elements under class name "current"
+  // **************** total current value calculation ************************** //
+
   $("#total-current-value").text(add(currentValues));
 
-  //determine the index of this on in currentValues array
-  calculateAllocation(currentAllocations, currentValues);
-  //assign class of allocation at predetermined index and assign value to it
+
+  // **************** calculate allocation field ********************************* //
+  for (var i = 0; i < currentAllocations.length; i++) {
+
+    var current = parseFloat(currentValues[i].value);
+
+    currentAllocations[i].innerHTML = calculateAllocation(total, current);
+  }
+
+  // calculateAllocation(currentAllocations, currentValues);
 
 
 })
+
+
+//*********************** */ when monthly contribution field changes ************************** //
+
+
 
 $(".monthly-contribution").change(function() {
 
@@ -65,23 +120,59 @@ $(".monthly-contribution").change(function() {
 
 })
 
-// current allocation percentage
-
-// when input changes, use this to
+// *********************** Calculate Compound Interest ********************** //
 
 
 
-// //total current value
+$(".calculate").click(function() {
 
-// function myNumberParse(value) {
-//   var result = parseFloat(value);
+  //********* */ future values calculation
 
-//   if (isNaN(result)) {
-//     result = 0;
-//   }
+  for (var i = 0; i < futureValues.length; i++) {
 
-//   return result;
-// }
+    var principal = parseFloat(currentValues[i].value);
+    var monthlycont = parseFloat(currentContributions[i].value);
+    var interestrate = (parseFloat(interest[i].value)) * .01;
+    var years = parseFloat($("#input-years").val());
+
+    var futurenumber = parseFloat(compoundCalculation(principal, monthlycont, interestrate, years));
+    futureValues[i].innerHTML = "$" +  futurenumber;
+
+    futuretotal += futurenumber;
+  }
+
+  //*********** */ future sum calculation
+
+  $("#results").text(function() {
+
+    // var sum = 0;
+
+    // _.each(futurevaluesarray, function(element, index) {
+
+    //   sum += futurevaluesarray[index];
+
+    // })
+
+
+    if ($("#input-years").val() === "1") {
+      return "In " + $("#input-years").val() + " year, you will have $" + futuretotal.toFixed(2) + "!";
+    }
+    return "In " + $("#input-years").val() + " years, you will have $" + futuretotal.toFixed(2) + "!";
+  });
+
+  // for (var i = 0; i < futureAllocations.length; i++) {
+
+  //   var current = parseFloat(futureValues[i].text);
+
+  //   futureAllocations[i].innerHTML = calculateAllocation(total, current);
+  // }
+
+  futuretotal = 0;
+
+
+})
+
+
 
 // // console.log(myNumberParse($("#bitcoin-current-value").val()));
 
