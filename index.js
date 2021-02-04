@@ -38,7 +38,7 @@ _.each(array, function(element, index) {
 
     total= sum;
 
-    return "$" + sum.toFixed(2);
+    return "$ " + sum.toFixed(2);
 
 }
 
@@ -125,7 +125,7 @@ $(".calculate").click(function() {
     var years = parseFloat($("#input-years").val());
 
     var futurenumber = parseFloat(compoundCalculation(principal, monthlycont, interestrate, years));
-    futureValues[i].innerHTML = "$" +  futurenumber;
+    futureValues[i].innerHTML = "$ " +  futurenumber;
 
 
     // push future values to array and update total future value //
@@ -140,9 +140,9 @@ $(".calculate").click(function() {
 
 
     if ($("#input-years").val() === "1") {
-      return "In " + $("#input-years").val() + " year, you will have $" + futuretotal.toFixed(2) + "!";
+      return "In " + $("#input-years").val() + " year, you will have $ " + futuretotal.toFixed(2) + "!";
     }
-    return "In " + $("#input-years").val() + " years, you will have $" + futuretotal.toFixed(2) + "!";
+    return "In " + $("#input-years").val() + " years, you will have $ " + futuretotal.toFixed(2) + "!";
   });
 
   //***************** */ future allocations ************************** //
