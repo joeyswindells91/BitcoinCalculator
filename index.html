@@ -32,7 +32,27 @@
             <td><h5 id="bitcoin-allocation" class="allocation">0%</h5></td>
             <td><input id="bitcoin-current-value" type="number" class="current"></td>
             <td><input id="bitcoin-contribution" type="number" class="monthly-contribution"></td>
-            <td><input id="bitcoin-expected-interest" type="number" class="interest"><a id="bitcoin-help" href="interest.html" target="_blank">Help with Bitcoin Interest Rate</a></td>
+            <td><input id="bitcoin-expected-interest" type="number" class="interest"><a id="bitcoin-help" href="interest.html" target="_blank">Help with Bitcoin Interest Rate</a>
+              <div class="container text-center mt-5">
+                <div class="row">
+                  <p>Bitcoin's current price is <input type="number" id="interest-current-price"></p>
+                </div>
+                <div class="row">
+                  <p>Bitcoin's price in the year <input type="number" id="interest-year" min="2022"></p>
+                </div>
+                <div class="row">
+                  <p> will be <input type="number" id="interest-future-price"></p>
+                </div>
+
+                  <button id="interest-calculate">calculate interest rate</button>
+
+
+                  <p id="final-result"></p>
+
+                  <button id="interest-copy">Use this Interest Rate</button>
+
+              </div>
+            </td>
             <!-- <td><input type="number">%</td> -->
           </tr>
           <tr>

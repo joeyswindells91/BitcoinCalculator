@@ -171,15 +171,16 @@ $(".calculate").click(function() {
 
 function calcInterestRate(currentprice, futureprice, years) {
 
-  var result = 9;
+  var result = (12 * (Math.pow((futureprice/currentprice), (1/(12 * years))) -1)) * 100;
 
 
-
-  return result;
+  return result.toFixed(3);
 
 };
 // // interest rate help page//
 
+
+var bitcoinrate = 0;
 
 $("#interest-calculate").click(function() {
   // $("#interest-result").innerHTML = "hello world";
@@ -187,12 +188,19 @@ $("#interest-calculate").click(function() {
   var future =  parseFloat($("#interest-future-price").val());
   var years = (parseFloat($("#interest-year").val())) - 2021;
 
-  $("#final-result").html("The average annual interest rate is " + calcInterestRate(current, future, years) + "%");
+  var result = calcInterestRate(current, future, years);
+  bitcoinrate = result;
+
+  $("#final-result").html("The average annual interest rate is " + result + "%");
 
 
   // $("#interest-result").innerHTML = "AHH SHEET";
   // $("#interest-result").innerHTML = calcInterestRate(current, future, years);
 });
 
+$("#interest-copy").click(function() {
+  $("#bitcoin-expected-interest").val(bitcoinrate);
+})
 
+bitcoinrate = 0;
 
