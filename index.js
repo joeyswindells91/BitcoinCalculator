@@ -58,7 +58,15 @@ function calculateAllocation(total, current) {
 
 function compoundCalculation(principal, monthlycont, interestrate, years) {
 
-  var result = (principal * Math.pow((1 + interestrate), (years))) + (monthlycont * ((Math.pow((1 + (interestrate/12)), (years * 12)) - 1) / (interestrate/12)));
+
+  var result = (principal * (Math.pow((1 + (interestrate/12)), (12 * years)))) + (monthlycont * (      (Math.pow(  (1 + (interestrate/12))  , ((12 * years)   )      )        -1           )     /            (interestrate/12)     ));
+
+
+// + (monthlycont * (      (Math.pow(  (1 + (interestrate/12))  , ((12 * years) -  1  )       )                        /            (interestrate/12)     )))
+
+
+  // monthlycont * (      (Math.pow(  (1 + (interestrate/12))  , ((12 * years) -  1  )       )                        /            (interestrate/12)     )
+  // var result = (principal * Math.pow((1 + interestrate), (years))) + (monthlycont * ((Math.pow((1 + (interestrate/12)), (years * 12)) - 1) / (interestrate/12)));
 
   if (isNaN(result)) {
     result = 0;
@@ -163,6 +171,7 @@ $(".calculate").click(function() {
   // reset future total
 
   futuretotal = 0;
+  futurevaluesarray = [];
 
 
 })
