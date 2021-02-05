@@ -109,6 +109,10 @@ $(".monthly-contribution").change(function() {
 
 })
 
+$("#bitcoin-help").click(function() {
+
+})
+
 // *********************** Calculate Compound Interest ********************** //
 
 
@@ -164,6 +168,31 @@ $(".calculate").click(function() {
 })
 
 
+
+function calcInterestRate(currentprice, futureprice, years) {
+
+  var result = 9;
+
+
+
+  return result;
+
+};
+// // interest rate help page//
+
+
+$("#interest-calculate").click(function() {
+  // $("#interest-result").innerHTML = "hello world";
+  var current = parseFloat($("#interest-current-price").val());
+  var future =  parseFloat($("#interest-future-price").val());
+  var years = (parseFloat($("#interest-year").val())) - 2021;
+
+  $("#final-result").html("The average annual interest rate is " + calcInterestRate(current, future, years) + "%");
+
+
+  // $("#interest-result").innerHTML = "AHH SHEET";
+  // $("#interest-result").innerHTML = calcInterestRate(current, future, years);
+});
 
 
 
