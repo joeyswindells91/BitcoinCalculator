@@ -11,9 +11,20 @@ var total = 0;
 var futuretotal = 0;
 var futurevaluesarray = [];
 
+
+// $("#help-box").slideUp();
+
+ $("#bitcoin-help").click(function () {
+
+ $("#help-box").removeClass("visible");
+
+ });
+
 $(".current").attr("placeholder", "$0.00");
 $(".monthly-contribution").attr("placeholder", "$0.00");
 $(".interest").attr("placeholder", "0%");
+
+
 
 
 function NumberEx(input) {

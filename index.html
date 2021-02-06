@@ -10,11 +10,11 @@
   <link rel="icon" href="images/bitcoinicon.png" type="images/png">
 </head>
 <body>
-  <div class="container bg-warning">
-    <div class="row text-center title">
+  <div class="container">
+    <div class="row text-center title bg-primary">
       <h1 class="display-3">Bitcoin Compound Interest Calculator</h1>
     </div>
-    <div class="table-responsive">
+    <div class="table-responsive bg-info">
       <table class="table">
         <thead>
           <tr>
@@ -32,24 +32,24 @@
             <td><h5 id="bitcoin-allocation" class="allocation">0%</h5></td>
             <td><input id="bitcoin-current-value" type="number" class="current"></td>
             <td><input id="bitcoin-contribution" type="number" class="monthly-contribution"></td>
-            <td><input id="bitcoin-expected-interest" type="number" class="interest"><a id="bitcoin-help" href="interest.html" target="_blank">Help with Bitcoin Interest Rate</a>
-              <div class="container text-center mt-5">
+            <td class="bitcoin-section"><input id="bitcoin-expected-interest" type="number" class="interest"><a id="bitcoin-help" href="">Help with Bitcoin Interest Rate</a>
+              <div class="container mt-5 visible" id="help-box">
                 <div class="row">
-                  <p>Bitcoin's current price is <input type="number" id="interest-current-price"></p>
+                  <p cla>Bitcoin Current Price: <input type="number" id="interest-current-price"></p>
                 </div>
                 <div class="row">
-                  <p>Bitcoin's price in the year <input type="number" id="interest-year" min="2022"></p>
+                  <p> Bitcoin Future Price Prediction: <input type="number" id="interest-future-price"></p>
                 </div>
                 <div class="row">
-                  <p> will be <input type="number" id="interest-future-price"></p>
+                  <p>Year Of Future Price <input type="number" id="interest-year" min="2022" placeholder="2030"></p>
                 </div>
 
-                  <button id="interest-calculate">calculate interest rate</button>
+                  <button id="interest-calculate">Calculate Annual Interest Rate</button>
 
 
                   <p id="final-result"></p>
 
-                  <button id="interest-copy">use this Interest Rate</button>
+                  <button id="interest-copy">Use Calculated Interest Rate</button>
 
               </div>
             </td>
@@ -116,10 +116,10 @@
             <th scope="row">TimeFrame (Years)</th>
             <td><input type="number" class="form-control" id="input-years" placeholder="Years" value="0"></td>
           </tr>
-          <tr>
+          <!-- <tr>
             <th scope="row">Annual Inflation</th>
             <td><input type="number" class="form-control" id="formGroupExampleInput2" placeholder="%" value="0"></td>
-          </tr>
+          </tr> -->
         </tbody>
       </table>
     </div>
