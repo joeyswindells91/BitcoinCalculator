@@ -16,9 +16,19 @@ var futurevaluesarray = [];
 
  $("#bitcoin-help").click(function () {
 
- $("#help-box").removeClass("visible");
+ $("#help-box").css("display", "block");
 
  });
+
+
+//  $("#interest-copy").click(function() {
+//   $("#help-box").css("display", "none");
+//  });
+
+ $("#close").click(function() {
+  $("#help-box").css("display", "none");
+ });
+
 
 $(".current").attr("placeholder", "$0.00");
 $(".monthly-contribution").attr("placeholder", "$0.00");
@@ -224,3 +234,31 @@ $("#interest-copy").click(function() {
 
 bitcoinrate = 0;
 
+
+
+// ******************** bitcoin price update ************************ //
+
+var btn = document.querySelector("button");
+var btcPriceDisplay = document.querySelector("#btcPrice");
+var currSymbol = "USD";
+var	currencyDesc = document.querySelector("#currencyDesc");
+
+btn.addEventListener("click", function(){
+  var XHR = new XMLHttpRequest();
+
+  XHR.onreadystatechange = function(){
+     if(XHR.readyState == 4 && XHR.status == 200){
+       var data = JSON.parse(XHR.responseText);
+        price = data.bpi.USD.rate;
+        symbol = data.bpi[currSymbol].code;
+        desc = data.bpi.USD.description;
+        btcPriceDisplay.innerText = price;
+        currncySymbol.innerText =  currSymbol;
+        currencyDesc.innerText = desc;
+       }
+    }
+    var url = "https://api.coindesk.com/v1/bpi/currentprice.json";
+    XHR.open("GET", url);
+    XHR.send();
+
+  });

@@ -9,9 +9,6 @@
   margin-bottom: 5%;
 }
 
-.future-table {
-  /* visibility: hidden; */
-}
 
 #results {
   margin-bottom: 5%;
@@ -23,8 +20,15 @@
 
 #help-box {
   text-align: right;
+  display: none;
+
 }
 
 /* .visible {
   display: none;
 } */
+
+.btn {
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
