@@ -211,6 +211,7 @@ function calcInterestRate(currentprice, futureprice, years) {
 
 
 var bitcoinrate = 0;
+var inputyears = 0;
 
 $("#interest-calculate").click(function() {
   // $("#interest-result").innerHTML = "hello world";
@@ -220,8 +221,10 @@ $("#interest-calculate").click(function() {
 
   var result = calcInterestRate(current, future, years);
   bitcoinrate = result;
+  inputyears = years
 
-  $("#final-result").html("The average annual interest rate is " + result + "%");
+
+  $("#final-result").html("The average annual interest rate is " + result + "% over " + years + " year(s)");
 
 
   // $("#interest-result").innerHTML = "AHH SHEET";
@@ -230,6 +233,11 @@ $("#interest-calculate").click(function() {
 
 $("#interest-copy").click(function() {
   $("#bitcoin-expected-interest").val(bitcoinrate);
+  // $("#input-years").val(inputyears);
+})
+
+$("#years-copy").click(function() {
+  $("#input-years").val(inputyears);
 })
 
 bitcoinrate = 0;

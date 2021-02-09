@@ -10,7 +10,7 @@
   <link rel="icon" href="images/bitcoinicon.png" type="images/png">
 </head>
 <body>
-  <div class="container">
+  <div class="container bg-info text-light">
     <div class="row text-center title">
       <h1 class="display-3">Bitcoin Compound Interest Calculator</h1>
       <!-- <div class="text-center">
@@ -20,6 +20,8 @@
       <!-- <h1 id="currencyDesc"></h1> -->
       <h1 id=currncySymbol></h1>
     </div>
+  </div>
+    <div class="container">
     <div class="table-responsive">
       <table class="table">
         <thead>
@@ -38,7 +40,7 @@
             <td><h5 id="bitcoin-allocation" class="allocation">0%</h5></td>
             <td><input id="bitcoin-current-value" type="number" class="current"></td>
             <td><input id="bitcoin-contribution" type="number" class="monthly-contribution"></td>
-            <td class="bitcoin-section"><input id="bitcoin-expected-interest" type="number" class="interest"><button id="bitcoin-help">Calculate Interest Rate</button>
+            <td class="bitcoin-section"><input id="bitcoin-expected-interest" type="number" class="interest"><button id="bitcoin-help" class="btn btn-info text-light">Calculate Interest Rate</button>
               <div class="container mt-5" id="help-box">
                 <div class="row">
                   <p cla>Bitcoin Current Price: <input type="number" id="interest-current-price" class="mt-2"></p>
@@ -50,14 +52,16 @@
                   <p>Year Of Future Price <input type="number" id="interest-year" min="2022" placeholder="2030" class="mt-2"></p>
                 </div>
 
-                  <button id="interest-calculate" class="mt-2">Calculate Annual Interest Rate</button>
+                  <button id="interest-calculate" class="btn btn-info text-light mt-2">Calculate Annual Interest Rate</button>
 
 
                   <p id="final-result" class="mt-2"></p>
 
-                  <button id="interest-copy" class="mt-2">Use Calculated Interest Rate</button>
+                  <button id="interest-copy" class="btn btn-info text-light mt-2">Use Calculated Interest Rate</button>
                   <br>
-                  <button id="close" class="mt-2">Close Table</button>
+                  <button id="years-copy" class="btn btn-info text-light mt-2">Use Calculated Years</button>
+                  <br>
+                  <button id="close" class="btn btn-info text-light mt-2">Close Table</button>
 
               </div>
             </td>
@@ -133,7 +137,7 @@
     </div>
 
       <div class="text-center">
-        <button type="button" class="calculate btn btn-light">Calculate</button>
+        <button type="button" class="calculate btn btn-info text-light">Calculate</button>
       </div>
 
 
@@ -193,6 +197,8 @@
         </tbody>
       </table>
     </div>
+
+  </div>
 
 
 
