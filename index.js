@@ -243,8 +243,12 @@ var btcPriceDisplay = document.querySelector("#btcPrice");
 var currSymbol = "USD";
 var	currencyDesc = document.querySelector("#currencyDesc");
 
-btn.addEventListener("click", function(){
-  var XHR = new XMLHttpRequest();
+
+
+function myFunction() {
+  setTimeout(function(){
+
+    var XHR = new XMLHttpRequest();
 
   XHR.onreadystatechange = function(){
      if(XHR.readyState == 4 && XHR.status == 200){
@@ -261,4 +265,28 @@ btn.addEventListener("click", function(){
     XHR.open("GET", url);
     XHR.send();
 
-  });
+
+  }, 100);
+}
+
+myFunction();
+
+// btn.addEventListener("click", function(){
+//   var XHR = new XMLHttpRequest();
+
+//   XHR.onreadystatechange = function(){
+//      if(XHR.readyState == 4 && XHR.status == 200){
+//        var data = JSON.parse(XHR.responseText);
+//         price = data.bpi.USD.rate;
+//         symbol = data.bpi[currSymbol].code;
+//         desc = data.bpi.USD.description;
+//         btcPriceDisplay.innerText = price;
+//         currncySymbol.innerText =  currSymbol;
+//         currencyDesc.innerText = desc;
+//        }
+//     }
+//     var url = "https://api.coindesk.com/v1/bpi/currentprice.json";
+//     XHR.open("GET", url);
+//     XHR.send();
+
+//   });
