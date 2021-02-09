@@ -264,7 +264,7 @@ function myFunction() {
         price = data.bpi.USD.rate;
         symbol = data.bpi[currSymbol].code;
         desc = data.bpi.USD.description;
-        btcPriceDisplay.innerText = price;
+        btcPriceDisplay.innerText = "1 Bitcoin = $" + price;
         currncySymbol.innerText =  currSymbol;
         currencyDesc.innerText = desc;
        }
