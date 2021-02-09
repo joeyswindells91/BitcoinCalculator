@@ -254,7 +254,7 @@ var	currencyDesc = document.querySelector("#currencyDesc");
 
 
 function myFunction() {
-  setTimeout(function(){
+  setInterval(function(){
 
     var XHR = new XMLHttpRequest();
 
