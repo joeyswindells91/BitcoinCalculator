@@ -10,13 +10,53 @@ var interest = $(".interest");
 var total = 0;
 var futuretotal = 0;
 var futurevaluesarray = [];
+var bitcoinprice = 0;
 
+
+// ******************** bitcoin price update ************************ //
+
+// var btn = document.querySelector("button");
+var btcPriceDisplay = document.querySelector("#btcPrice");
+var currSymbol = "USD";
+// var	currencyDesc = document.querySelector("#currencyDesc");
+
+
+function myFunction() {
+  setInterval(function(){
+
+    var XHR = new XMLHttpRequest();
+
+  XHR.onreadystatechange = function(){
+     if(XHR.readyState == 4 && XHR.status == 200){
+       var data = JSON.parse(XHR.responseText);
+        price = data.bpi.USD.rate;
+        bitcoinprice = data.bpi.USD.rate_float;
+        symbol = data.bpi[currSymbol].code;
+        desc = data.bpi.USD.description;
+        btcPriceDisplay.innerText = "1 Bitcoin = $" + price;
+
+        // currncySymbol.innerText =  currSymbol;
+        // currencyDesc.innerText = desc;
+       }
+    }
+    var url = "https://api.coindesk.com/v1/bpi/currentprice.json";
+    XHR.open("GET", url);
+    XHR.send();
+
+
+  }, 100);
+}
+
+myFunction();
+
+// ************************************************************************ //
 
 // $("#help-box").slideUp();
 
  $("#bitcoin-help").click(function () {
 
  $("#help-box").css("display", "block");
+ $("#interest-current-price").val(bitcoinprice.toFixed(2));
 
  });
 
@@ -244,39 +284,7 @@ bitcoinrate = 0;
 
 
 
-// ******************** bitcoin price update ************************ //
 
-var btn = document.querySelector("button");
-var btcPriceDisplay = document.querySelector("#btcPrice");
-var currSymbol = "USD";
-var	currencyDesc = document.querySelector("#currencyDesc");
-
-
-function myFunction() {
-  setInterval(function(){
-
-    var XHR = new XMLHttpRequest();
-
-  XHR.onreadystatechange = function(){
-     if(XHR.readyState == 4 && XHR.status == 200){
-       var data = JSON.parse(XHR.responseText);
-        price = data.bpi.USD.rate;
-        symbol = data.bpi[currSymbol].code;
-        desc = data.bpi.USD.description;
-        btcPriceDisplay.innerText = "1 Bitcoin = $" + price;
-        currncySymbol.innerText =  currSymbol;
-        currencyDesc.innerText = desc;
-       }
-    }
-    var url = "https://api.coindesk.com/v1/bpi/currentprice.json";
-    XHR.open("GET", url);
-    XHR.send();
-
-
-  }, 100);
-}
-
-myFunction();
 
 // btn.addEventListener("click", function(){
 //   var XHR = new XMLHttpRequest();
