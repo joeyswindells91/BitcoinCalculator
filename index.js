@@ -55,7 +55,7 @@ myFunction();
 
  $("#bitcoin-help").click(function () {
 
- $("#help-box").css("display", "block");
+//  $("#help-box").css("display", "block");
  $("#interest-current-price").val(bitcoinprice.toFixed(2));
 
  });
