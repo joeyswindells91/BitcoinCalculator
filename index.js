@@ -252,7 +252,6 @@ var currSymbol = "USD";
 var	currencyDesc = document.querySelector("#currencyDesc");
 
 
-
 function myFunction() {
   setInterval(function(){
 
@@ -298,3 +297,6 @@ myFunction();
 //     XHR.send();
 
 //   });
+
+
+// {"time":{"updated":"Feb 9, 2021 23:32:00 UTC","updatedISO":"2021-02-09T23:32:00+00:00","updateduk":"Feb 9, 2021 at 23:32 GMT"},"disclaimer":"This data was produced from the CoinDesk Bitcoin Price Index (USD). Non-USD currency data converted using hourly conversion rate from openexchangerates.org","chartName":"Bitcoin","bpi":{"USD":{"code":"USD","symbol":"&#36;","rate":"46,492.2339","description":"United States Dollar","rate_float":46492.2339},"GBP":{"code":"GBP","symbol":"&pound;","rate":"33,654.2403","description":"British Pound Sterling","rate_float":33654.2403},"EUR":{"code":"EUR","symbol":"&euro;","rate":"38,362.1369","description":"Euro","rate_float":38362.1369}}}
