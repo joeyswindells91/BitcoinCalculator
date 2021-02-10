@@ -145,7 +145,7 @@ function compoundCalculation(principal, monthlycont, interestrate, years) {
 
 $(".current").change(function() {
 
-  this.value = parseFloat($(this).val()).toFixed(2);
+  this.value = NumberEx(parseFloat($(this).val()).toFixed(2));
 
   // **************** total current value calculation ************************** //
 
@@ -172,7 +172,9 @@ $(".current").change(function() {
 
 $(".monthly-contribution").change(function() {
 
-  this.value = parseFloat($(this).val()).toFixed(2);
+
+
+  this.value = NumberEx(parseFloat($(this).val()).toFixed(2));
 
   $("#total-contribution").text(add(currentContributions));
 

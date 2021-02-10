@@ -20,13 +20,15 @@
 
 #help-box {
   text-align: right;
-  display: none;
-
 }
 
 /* .visible {
   display: none;
 } */
+
+.copy {
+display: none;
+}
 
 .btn {
   margin-top: 2%;
