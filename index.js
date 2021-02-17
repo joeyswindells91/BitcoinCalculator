@@ -215,9 +215,10 @@ $(".calculate").click(function() {
 
 
     if ($("#input-years").val() === "1") {
-      return "In " + $("#input-years").val() + " year, you will have $" + futuretotal.toFixed(2) + "!";
+      return "In " + $("#input-years").val() + " year, you will have " + new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD'}).format(futuretotal) + "!";
+      // return "In " + $("#input-years").val() + " year, you will have $" + futuretotal.toFixed(2) + "!";
     }
-    return "In " + $("#input-years").val() + " years, you will have $" + futuretotal.toFixed(2) + "!";
+    return "In " + $("#input-years").val() + " years, you will have " + new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD'}).format(futuretotal) + "!";
   });
 
   //***************** */ future allocations ************************** //
