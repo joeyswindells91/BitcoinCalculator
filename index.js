@@ -266,7 +266,7 @@ $("#interest-calculate").click(function() {
   inputyears = years
 
 
-  $("#final-result").html("The average annual interest rate is " + result + "% over " + years + " year(s)");
+  $("#final-result").html("The average annual return is " + result + "% over " + years + " year(s)");
 
 
   // $("#interest-result").innerHTML = "AHH SHEET";

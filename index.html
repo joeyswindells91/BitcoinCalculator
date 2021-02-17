@@ -9,12 +9,15 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   <link rel="icon" href="images/bitcoinicon.png" type="images/png">
   <link href="dist/css/fs-modal.min.css" rel="stylesheet">
+  <!-- font links-->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,700&display=swap" rel="stylesheet">
 </head>
 <body>
 
 
 
-  <div class="container bg-info text-light">
+  <div class="container bg-warning text-light">
     <div class="row text-center title">
       <h1 class="display-3">Bitcoin Compound Interest Calculator</h1>
       <!-- <div class="text-center">
@@ -44,7 +47,7 @@
             <td><h5 id="bitcoin-allocation" class="allocation">0%</h5></td>
             <td><input id="bitcoin-current-value" type="number" class="current"></td>
             <td><input id="bitcoin-contribution" type="number" class="monthly-contribution"></td>
-            <td class="bitcoin-section"><input id="bitcoin-expected-interest" type="number" class="interest"><button type="button" id="bitcoin-help" class="btn btn-info text-light" data-toggle="modal" data-target="#exampleModal">Calculate Annual Return</button>
+            <td class="bitcoin-section"><input id="bitcoin-expected-interest" type="number" class="interest"><button type="button" id="bitcoin-help" class="btn btn-warning text-light" data-toggle="modal" data-target="#exampleModal">Calculate Annual Return</button>
 
 
                 <!-- Button trigger modal
@@ -73,14 +76,14 @@
                       <p>Year Of Future Price <input type="number" id="interest-year" min="2022" placeholder="2030" class="mt-2"></p>
 
 
-                      <button id="interest-calculate" class="btn btn-info text-light mt-2">Calculate Annual Return</button>
+                      <button id="interest-calculate" class="btn btn-warning text-light mt-2">Calculate Annual Return</button>
 
 
                       <p id="final-result" class="mt-2"></p>
 
-                      <button id="interest-copy" class="btn btn-info text-light mt-2 copy">Copy Return Rate to Calculator</button>
+                      <button id="interest-copy" class="btn btn-warning text-light mt-2 copy">Copy Return Rate to Calculator</button>
                       <br>
-                      <button id="years-copy" class="btn btn-info text-light mt-2 copy">Copy Timeframe to Calculator</button>
+                      <button id="years-copy" class="btn btn-warning text-light mt-2 copy">Copy Timeframe to Calculator</button>
 
 
                   </div>
@@ -189,7 +192,7 @@
     </div>
 
       <div class="text-center">
-        <button type="button" class="calculate btn btn-info text-light">Calculate</button>
+        <button type="button" class="calculate btn btn-warning text-light">Calculate</button>
       </div>
 
 
