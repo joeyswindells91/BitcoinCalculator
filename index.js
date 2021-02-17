@@ -149,6 +149,7 @@ $(".current").change(function() {
 
   // **************** total current value calculation ************************** //
 
+
   $("#total-current-value").text(add(currentValues));
 
 
@@ -200,7 +201,7 @@ $(".calculate").click(function() {
     var years = parseFloat($("#input-years").val());
 
     var futurenumber = parseFloat(compoundCalculation(principal, monthlycont, interestrate, years));
-    futureValues[i].innerHTML = "$ " +  futurenumber;
+    futureValues[i].innerHTML = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD'}).format(futurenumber);
 
 
     // push future values to array and update total future value //
