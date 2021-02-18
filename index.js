@@ -70,9 +70,9 @@ myFunction();
  });
 
 
-$(".current").attr("placeholder", "$0.00");
-$(".monthly-contribution").attr("placeholder", "$0.00");
-$(".interest").attr("placeholder", "0%");
+$(".current").attr("value", "0");
+$(".monthly-contribution").attr("value", "0");
+$(".interest").attr("value", "0");
 
 
 
@@ -99,7 +99,7 @@ _.each(array, function(element, index) {
 
     total= sum;
 
-    return "$ " + sum.toFixed(2);
+    return sum.toFixed(2);
 
 }
 
@@ -149,8 +149,8 @@ $(".current").change(function() {
 
   // **************** total current value calculation ************************** //
 
-
-  $("#total-current-value").text(add(currentValues));
+  // new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD'}).format(add(currentValues));
+  $("#total-current-value").text(new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD'}).format(add(currentValues)));
 
 
   // **************** calculate allocation field ********************************* //
@@ -177,7 +177,8 @@ $(".monthly-contribution").change(function() {
 
   this.value = NumberEx(parseFloat($(this).val()).toFixed(2));
 
-  $("#total-contribution").text(add(currentContributions));
+
+  $("#total-contribution").text(new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD'}).format(add(currentContributions)));
 
 })
 
