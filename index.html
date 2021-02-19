@@ -35,9 +35,6 @@
 
     <div class="container">
     <!-- Button trigger modal -->
-<button type="button" class="btn btn-warning text-light" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Mobile Calculate Annual Return
-</button>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -78,13 +75,15 @@
         </thead>
         <tbody>
           <tr>
-            <th scope="row">Bitcoin <img src="images/bitcoin.png" alt=""></th>
+            <th scope="row">Bitcoin <img src="images/bitcoin.png" alt="">
+           </th>
             <td><h5 id="bitcoin-allocation" class="allocation">0%</h5></td>
             <td><input id="bitcoin-current-value" type="number" class="current" value="0"></td>
             <td><input id="bitcoin-contribution" type="number" class="monthly-contribution"></td>
-            <td class="bitcoin-section"><input id="bitcoin-expected-interest" type="number" class="interest"></td>
-
-            </td>
+            <td class="bitcoin-section"><input id="bitcoin-expected-interest" type="number" class="interest">
+              <button type="button" class="btn btn-warning text-light" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Mobile Calculate Annual Return
+              </button></td>
 
           </tr>
           <tr>
