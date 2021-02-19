@@ -186,11 +186,25 @@ $("#bitcoin-help").click(function() {
 
 })
 
+
+$("#input-years").change(function() {
+
+})
 // *********************** Calculate Compound Interest ********************** //
 
-
+$(".reset").click(function() {
+  window.location.reload();
+});
 
 $(".calculate").click(function() {
+
+  if ($("#input-years").val() < 1) {
+
+  $("#input-years").val(1);
+
+  }
+
+
 
   //********* */ future values calculation
 
