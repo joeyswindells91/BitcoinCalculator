@@ -55,14 +55,12 @@
             <td><input id="bitcoin-contribution" type="number" class="monthly-contribution"></td>
             <td class="bitcoin-section"><input id="bitcoin-expected-interest" type="number" class="interest"><button type="button" id="bitcoin-help" class="btn btn-warning text-light" data-toggle="modal" data-target="#myModal">Calculate Annual Return </button>
 
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="myModalLabel">Calculate Bitcoin Annual Return</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <h5 class="modal-title" id="exampleModalLabel">Calculate Bitcoin Annual Return</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
       </div>
         <div class="modal-body">
           <div class="container" id="help-box">
@@ -77,7 +75,7 @@
           </div>
         </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
          </div>
       </div>
   </div>
@@ -308,7 +306,7 @@
       <div class="modal-body">
         <div class="container" id="help-box">
           <p>Bitcoin Current Price ($): <input type="number" id="interest-current-price"></p>
-          <p> Bitcoin Future Price Prediction ($): <input type="number" id="interest-future-price" class="mt-2"></p>
+          <p>Bitcoin Future Price Prediction ($): <input type="number" id="interest-future-price" class="mt-2"></p>
           <p>Year Of Future Price <input type="number" id="interest-year" min="2022" placeholder="2022" class="mt-2"></p>
           <button id="interest-calculate" class="btn btn-warning text-light mt-2">Calculate Annual Return</button>
           <p id="final-result" class="mt-2"></p>
